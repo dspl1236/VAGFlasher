@@ -10,18 +10,21 @@ readme = "README.md"
 license = {text = "GPL-3.0"}
 requires-python = ">=3.10"
 dependencies = [
-    "python-can>=4.3",
-    "aioisotp>=0.1",
-    "aiohttp>=3.9",         # FunkBridge WebSocket interface
-    "rich>=13",             # terminal output
-    "click>=8.1",           # CLI
+    "aiohttp>=3.9",
+    "rich>=13",
+    "click>=8.1",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-asyncio", "ruff==0.15.10"]
+can     = ["python-can>=4.3", "aioisotp>=0.1"]
+dev     = ["pytest", "pytest-asyncio", "ruff==0.15.10"]
+all     = ["vagflasher[can]"]
 
 [project.scripts]
 vagflasher = "vagflasher.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["vagflasher*"]
 
 [tool.ruff]
 target-version = "py310"
@@ -29,6 +32,8 @@ line-length = 100
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
 ignore = ["E501", "E741", "UP015"]
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E402"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
