@@ -1,0 +1,10 @@
+python-can>=4.3
+aioisotp>=0.1
+aiohttp>=3.9
+rich>=13
+click>=8.1
+
+[dev]
+pytest
+pytest-asyncio
+ruff==0.15.10

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vagflasher"
+version = "0.1.0"
+description = "Open-source VAG ECU/TCU flash tool — ME17 / MED9 / ME7 / EDC17. No cloud. No subscriptions."
+readme = "README.md"
+license = {text = "GPL-3.0"}
+requires-python = ">=3.10"
+dependencies = [
+    "python-can>=4.3",
+    "aioisotp>=0.1",
+    "aiohttp>=3.9",         # FunkBridge WebSocket interface
+    "rich>=13",             # terminal output
+    "click>=8.1",           # CLI
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "ruff==0.15.10"]
+
+[project.scripts]
+vagflasher = "vagflasher.cli:main"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501", "E741", "UP015"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

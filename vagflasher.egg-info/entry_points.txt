@@ -1,0 +1,2 @@
+[console_scripts]
+vagflasher = vagflasher.cli:main
