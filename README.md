@@ -1,7 +1,7 @@
 # VAGFlasher
 
 [![CI](https://github.com/dspl1236/VAGFlasher/actions/workflows/ci.yml/badge.svg)](https://github.com/dspl1236/VAGFlasher/actions/workflows/ci.yml)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 **Open-source VAG ECU/TCU flash tool. No cloud. No subscriptions. No phone-home.**
 
@@ -70,4 +70,4 @@ vagflasher/
 
 ## License
 
-GPL-3.0 — free to use, modify, and distribute. Contributions welcome.
+MIT — free to use, modify, and distribute. Contributions welcome.
